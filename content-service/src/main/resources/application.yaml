@@ -1,3 +1,22 @@
 spring:
   application:
     name: content-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/netflix_content_db
+    username: postgres
+    password: postgres
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
