@@ -1,16 +1,7 @@
 package com.netflix.contentservice.dto;
 
-import java.time.LocalDateTime;
-
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import com.netflix.contentservice.model.Genre;
-import com.netflix.contentservice.model.VideoStatus;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -22,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MovieRequest {
-    
+
     @NotBlank(message = "El título es obligatorio")
     private String title;
 
@@ -44,7 +35,4 @@ public class MovieRequest {
 
     private String thumbnailUrl;
 
-
-    
-    
 }

@@ -2,7 +2,6 @@ package com.netflix.contentservice.controller;
 
 import java.util.List;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,17 +39,17 @@ public class ContentController {
     }
 
     @GetMapping("/genre/{genre}")
-    public ResponseEntity<List<MovieResponse>> getMovieByGenre(@PathVariable Genre genre){
+    public ResponseEntity<List<MovieResponse>> getMovieByGenre(@PathVariable Genre genre) {
         return ResponseEntity.ok(contentService.getMovieByGenre(genre));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MovieResponse> getMovieById(@PathVariable String id){
+    public ResponseEntity<MovieResponse> getMovieById(@PathVariable String id) {
         return ResponseEntity.ok(contentService.getMovieById(id));
     }
-    
+
     @GetMapping("/search")
-    public ResponseEntity<List<MovieResponse>> searchMovie(@RequestParam String title){
+    public ResponseEntity<List<MovieResponse>> searchMovie(@RequestParam String title) {
         return ResponseEntity.ok(contentService.searchMovie(title));
     }
 
